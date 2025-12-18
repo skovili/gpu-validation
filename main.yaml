@@ -2,6 +2,12 @@
 - name: GPU Validation VM setup
   hosts: control_node
   gather_facts: false
+  pre_tasks:
+    - name: Install Ansible Galaxy role requirements
+      ansible.builtin.command:
+        cmd: ansible-galaxy role install -r requirements.yaml --force
+        chdir: "{{ playbook_dir }}"
+      changed_when: true
   tasks:
     - name: VM Pre-tasks
       ansible.builtin.include_role:
