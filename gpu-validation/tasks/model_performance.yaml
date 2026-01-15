@@ -2,6 +2,7 @@
 - name: Run the model performance check script
   ansible.builtin.command: /tmp/scripts/model_performance_check.sh
   environment:
+    URL: "{{ gpu_validation_vllm_api_url }}"
     MODEL_NAME: "{{ gpu_validation_model_name }}"
   register: performance_script_output
   changed_when: false
