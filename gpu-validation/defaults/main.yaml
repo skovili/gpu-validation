@@ -28,6 +28,9 @@ gpu_validation_security_group: basic
 gpu_validation_floating_ip: 192.168.122.222
 # [string] WARNING Where to (over-)write the ssh key. Must match path in inventory
 gpu_validation_private_key_file: ~/test_keypair.key
+# [string] SSH ProxyCommand for accessing VMs through a bastion/hypervisor
+# Example: '-o ProxyCommand="ssh -W %h:%p -o StrictHostKeyChecking=no -i /path/to/key user@bastion-host"'
+gpu_validation_ssh_proxy_command:
 # [bool] Whether to clean up the VM before running tests
 gpu_validation_pre_cleanup_enabled: true
 # [bool] Whether to clean up the VM after running tests
@@ -76,3 +79,5 @@ gpu_validation_workload_userns: --userns=keep-id:uid=1001
 gpu_validation_workload_shm_size: "--shm-size=4g"
 # [string] Additional environment variables
 gpu_validation_workload_additional_env: "--env=HF_HUB_OFFLINE=0 --env=VLLM_NO_USAGE_STATS=1"
+# [string] vLLM API URL
+gpu_validation_vllm_api_url: "http://127.0.0.1:8000"
