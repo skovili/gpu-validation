@@ -5,7 +5,7 @@ metadata:
   name: gpu-validation
   namespace: openstack
 spec:
-  ansibleGitRepo: https://github.com/rhos-vaf/gpu-validation.git
+  ansibleGitRepo: https://github.com/skovili/gpu-validation.git
   # yamllint disable rule:line-length
   ansibleInventory: |
     [control_node]

@@ -11,7 +11,7 @@
   vars:
     nvidia_driver_module_version: "latest-dkms"
     nvidia_driver_install_management_library: false
-    nvidia_driver_container_toolkit_repo_url: "https://nvidia.github.io/libnvidia-container/stable/rpm/x86_64"
+    nvidia_driver_container_tools_version_release: ""
 
 
 - name: Check GPUs
