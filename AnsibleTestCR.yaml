@@ -15,9 +15,14 @@ spec:
   # yamllint enable rule:line-length
   ansiblePlaybookPath: main.yaml
   ansibleVarFiles: |
+    gpu_validation_dns_server: 10.37.136.3
+    nvidia_driver_skip_reboot: true
     gpu_validation_model_tests_enabled: false
     gpu_validation_pci_devices:
       10de:27b8: 1
+    gpu_validation_workload_container_image: "docker://registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0"
+    gpu_validation_workload_registry_username: "YOUR_REGISTRY_USERNAME"
+    gpu_validation_workload_registry_password: "YOUR_REGISTRY_PASSWORD"
   containerImage: quay.io/podified-master-centos9/openstack-ansible-tests:current-podified
   debug: false
   openStackConfigMap: openstack-config
