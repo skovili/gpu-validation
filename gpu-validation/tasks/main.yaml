@@ -11,16 +11,6 @@
   vars:
     nvidia_driver_module_version: "latest-dkms"
     nvidia_driver_install_management_library: false
-    nvidia_driver_install_container_tools: false
-
-- name: Install NVIDIA Container Toolkit manually
-  become: true
-  ansible.builtin.shell: |
-    curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | \
-      tee /etc/yum.repos.d/nvidia-container-toolkit.repo
-    dnf install -y nvidia-container-toolkit
-  args:
-    creates: /usr/bin/nvidia-ctk
 
 - name: Check GPUs
   ansible.builtin.import_tasks: gpus.yaml
