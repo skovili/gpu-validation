@@ -1,11 +1,10 @@
 ---
-- name: Overwrite DNS entries in /etc/resolv.conf if gpu_validation_dns_server is set
-  ansible.builtin.copy:
-    dest: /etc/resolv.conf
-    content: |
-      nameserver {{ gpu_validation_dns_server }}
-    mode: '0644'
+- name: Set DNS server using nmcli if gpu_validation_dns_server is set
+  ansible.builtin.shell: |
+    nmcli con mod "System eth0" ipv4.dns "{{ gpu_validation_dns_server }}" ipv4.ignore-auto-dns yes
+    nmcli con up "System eth0"
   when: gpu_validation_dns_server != ""
+  changed_when: true
 
 - name: Install pciutils package
   ansible.builtin.dnf:
