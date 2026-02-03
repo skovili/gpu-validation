@@ -73,7 +73,7 @@ gpu_validation_workload_device_opts: "--device nvidia.com/gpu=all"
 # [string] Container security options
 gpu_validation_workload_security_opts: "--security-opt=label=disable"
 # [string] Container options
-gpu_validation_workload_additional_opts: "--rm -it"
+gpu_validation_workload_additional_opts: "-d"
 # [string] Container user namespace option
 gpu_validation_workload_userns: --userns=keep-id:uid=1001
 # [string] Shared memory size
