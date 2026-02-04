@@ -40,7 +40,6 @@ gpu_validation_ca_cert_path: /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 
 # [string] DNS server to inject into /etc/resolv.conf
 gpu_validation_dns_server: 10.37.136.3 #192.168.122.1
-nvidia_driver_skip_reboot: true
 # [dict] The PCI Device ID and the number of devices expected
 gpu_validation_pci_devices:
   10de:27b8: 1
@@ -73,7 +72,7 @@ gpu_validation_workload_device_opts: "--device nvidia.com/gpu=all"
 # [string] Container security options
 gpu_validation_workload_security_opts: "--security-opt=label=disable"
 # [string] Container options
-gpu_validation_workload_additional_opts: "-d"
+gpu_validation_workload_additional_opts: "--rm -it"
 # [string] Container user namespace option
 gpu_validation_workload_userns: --userns=keep-id:uid=1001
 # [string] Shared memory size
