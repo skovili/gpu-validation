@@ -17,6 +17,8 @@ gpu_validation_flavor_vcpus: 4
 gpu_validation_flavor_disk: 80
 # [string] Number of GPUs for the flavor
 gpu_validation_flavor_gpus: 1
+# [string] PCI passthrough alias name for GPU flavor
+gpu_validation_pci_alias: gpu-l4
 
 # [string] Keypair to use when creating the VM
 gpu_validation_key_name: gpu-validation

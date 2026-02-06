@@ -33,7 +33,7 @@
     vcpus: "{{ gpu_validation_flavor_vcpus }}"
     disk: "{{ gpu_validation_flavor_disk }}"
     extra_specs:
-      "pci_passthrough:alias": "gpu-l4:{{ gpu_validation_flavor_gpus }}"
+      "pci_passthrough:alias": "{{ gpu_validation_pci_alias }}:{{ gpu_validation_flavor_gpus }}"
       "hw:pci_numa_affinity_policy": "preferred"
       "hw:hide_hypervisor_id": "true"
       "hw:kvm_hidden": "true"
